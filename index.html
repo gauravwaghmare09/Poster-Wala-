@@ -23,11 +23,19 @@
 
     .topbar {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px;
+      align-items: center;
+      gap: 15px;
+      padding: 10px 20px;
       background: #134d76;
       flex-wrap: wrap;
+    }
+
+    .top-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #90caf9;
     }
 
     .topbar button {
@@ -49,7 +57,6 @@
     .main {
       display: flex;
       flex: 1;
-      flex-direction: row;
     }
 
     .sidebar {
@@ -81,7 +88,7 @@
 
     .content {
       flex: 1;
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
       overflow-y: auto;
     }
@@ -116,8 +123,8 @@
     }
 
     .sample-box {
-      width: 150px;
-      height: 90px;
+      width: 160px;
+      height: 100px;
       background: #1a3e5f;
       border-radius: 8px;
       display: flex;
@@ -147,7 +154,6 @@
       margin-top: 15px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 20px;
       font-size: 1.6rem;
     }
@@ -160,39 +166,12 @@
     .contact-icons a:hover {
       transform: scale(1.2);
     }
-
-    /* 👇 Mobile Responsive */
-    @media (max-width: 768px) {
-      .main {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-        padding: 10px 0;
-      }
-
-      .name {
-        margin-bottom: 0;
-      }
-
-      .content {
-        padding: 20px 10px;
-      }
-
-      .sample-box {
-        width: 100px;
-        height: 70px;
-        font-size: 0.85rem;
-      }
-    }
   </style>
 </head>
 <body>
+
   <div class="topbar">
+    <img src="logo.png" alt="Logo" class="top-logo" />
     <button onclick="showHome()">Home</button>
     <button onclick="showSamples()">Design Samples</button>
   </div>
@@ -218,7 +197,7 @@
     }
 
     function showSamples() {
-      document.getElementById("mainContent").innerHTML = `
+      document.getElementById("mainContent").innerHTML = \`
         <h1>Design Samples</h1>
 
         <div class="category">
@@ -280,7 +259,7 @@
             <a href="tel:+911234567890"><i class="fas fa-phone-alt"></i></a>
           </div>
         </div>
-      `;
+      \`;
     }
   </script>
 </body>
