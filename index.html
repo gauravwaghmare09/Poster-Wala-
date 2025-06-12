@@ -16,57 +16,58 @@
     body {
       background: #0e1e2e;
       color: #e0f7ff;
-      display: flex;
       min-height: 100vh;
+      display: flex;
       flex-direction: column;
     }
 
-    .main {
+    .topbar {
       display: flex;
-      flex: 1;
-    }
-
-    .sidebar {
-      width: 220px;
-      background: #0b2c44;
-      padding: 30px 10px;
-      display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      background: #134d76;
+      flex-wrap: wrap;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .logo {
-      width: 70px;
-      height: 70px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #90caf9;
-      margin-bottom: 10px;
     }
 
     .name {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: bold;
       color: #90caf9;
-      text-align: center;
-      margin-bottom: 30px;
     }
 
-    .sidebar button {
+    .topbar-center,
+    .topbar-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    .topbar button {
       background: #1e88e5;
       color: #fff;
       border: none;
-      padding: 10px 16px;
-      margin: 6px 0;
-      font-size: 1rem;
+      padding: 8px 16px;
+      font-size: 0.9rem;
       border-radius: 6px;
       cursor: pointer;
-      width: 90%;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
 
-    .sidebar button:hover {
+    .topbar button:hover {
       background: #90caf9;
       color: #000;
     }
@@ -75,6 +76,7 @@
       flex: 1;
       padding: 30px 20px;
       overflow-y: auto;
+      text-align: center;
     }
 
     .content h1 {
@@ -133,7 +135,6 @@
     .contact h3 {
       color: #4fc3f7;
       margin-bottom: 10px;
-      text-align: center;
     }
 
     .contact-icons {
@@ -155,31 +156,16 @@
     }
 
     @media (max-width: 768px) {
-      .main {
+      .topbar {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
       }
 
-      .sidebar {
+      .topbar-center,
+      .topbar-right {
         width: 100%;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 20px 10px;
-      }
-
-      .sidebar .name {
-        margin-bottom: 0;
-      }
-
-      .sidebar button {
-        width: auto;
-        margin: 5px;
-        padding: 8px 12px;
-      }
-
-      .content {
-        padding: 20px 10px;
+        justify-content: flex-start;
       }
 
       .sample-box {
@@ -191,17 +177,23 @@
 </head>
 <body>
 
-  <div class="main">
-    <div class="sidebar">
+  <div class="topbar">
+    <div class="topbar-left">
       <img src="logo.png" alt="Logo" class="logo" />
       <div class="name">Poster Wala</div>
-      <button onclick="showHome()">Home</button>
-      <button onclick="showSamples()">Design Samples</button>
     </div>
 
-    <div class="content" id="mainContent">
-      <!-- Content loads dynamically -->
+    <div class="topbar-center">
+      <button onclick="showHome()">Home</button>
     </div>
+
+    <div class="topbar-right">
+      <button onclick="showSamples()">Design Samples</button>
+    </div>
+  </div>
+
+  <div class="content" id="mainContent">
+    <!-- Content will load here -->
   </div>
 
   <script>
@@ -253,7 +245,7 @@
       `;
     }
 
-    // Load home content by default
+    // Load home by default
     showHome();
   </script>
 </body>
