@@ -20,12 +20,12 @@
     }
 
     .sidebar {
-      width: 250px;
+      width: 220px;
       background: #141414;
       padding: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* left-align */
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
     }
 
@@ -39,23 +39,22 @@
     }
 
     .name {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #f0b6d4;
-      margin-bottom: 30px;
-      text-align: center;
+      margin-bottom: 20px;
+      text-align: left;
     }
 
     .nav {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
+      width: 100%;
     }
 
     .nav button {
-      padding: 10px 15px;
+      padding: 10px;
       border: none;
       background: #292929;
       color: #fff;
@@ -63,6 +62,7 @@
       border-radius: 8px;
       font-size: 1rem;
       transition: background 0.3s;
+      text-align: left;
     }
 
     .nav button:hover {
@@ -70,19 +70,19 @@
       color: #000;
     }
 
-    main.content {
+    .content {
       flex: 1;
       padding: 40px 20px;
       overflow-y: auto;
     }
 
-    h1 {
+    .content h1 {
       color: #f0b6d4;
       font-size: 2rem;
       margin-bottom: 10px;
     }
 
-    p {
+    .content p {
       color: #ccc;
       margin-bottom: 30px;
     }
@@ -140,46 +140,25 @@
       color: #f0b6d4;
       text-decoration: none;
     }
-
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .nav {
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      main.content {
-        padding: 20px 10px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <!-- Sidebar -->
-  <aside class="sidebar">
+  <div class="sidebar">
     <img src="logo.png" alt="Logo" class="logo" />
     <div class="name">Poster Wala</div>
     <div class="nav">
       <button onclick="showHome()">Home</button>
       <button onclick="showSamples()">Design Samples</button>
     </div>
-  </aside>
+  </div>
 
   <!-- Main Content -->
-  <main class="content" id="mainContent">
+  <div class="content" id="mainContent">
     <h1>Welcome to Poster Wala</h1>
     <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
-  </main>
+  </div>
 
   <script>
     function showHome() {
