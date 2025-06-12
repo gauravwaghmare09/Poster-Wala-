@@ -21,45 +21,40 @@
       flex-direction: column;
     }
 
-    .header {
+    .topbar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #134d76;
+      flex-direction: column;
+      align-items: flex-start;
       padding: 10px 20px;
-      flex-wrap: wrap;
-    }
-
-    .left-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      background: #134d76;
     }
 
     .logo {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      object-fit: cover;
       border: 2px solid #90caf9;
+      object-fit: cover;
+      margin-bottom: 5px;
     }
 
-    .name {
-      font-size: 1rem;
+    .nav-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand-name {
+      font-size: 1.2rem;
       font-weight: bold;
       color: #90caf9;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 15px;
     }
 
     .nav-buttons button {
       background: #1e88e5;
       color: #fff;
       border: none;
-      padding: 8px 16px;
+      padding: 8px 14px;
       font-size: 0.9rem;
       border-radius: 6px;
       cursor: pointer;
@@ -71,63 +66,25 @@
       color: #000;
     }
 
-    .main-content {
+    .main {
       flex: 1;
       padding: 40px 20px;
       text-align: center;
     }
 
-    .main-content h1 {
+    .main h1 {
       color: #90caf9;
       font-size: 2rem;
       margin-bottom: 10px;
     }
 
-    .main-content p {
+    .main p {
       color: #bbdefb;
       margin-bottom: 30px;
-    }
-
-    .category {
-      margin-bottom: 30px;
-    }
-
-    .category h2 {
-      margin-bottom: 10px;
-      color: #4fc3f7;
-      border-bottom: 1px solid #4fc3f7;
-      padding-bottom: 5px;
-    }
-
-    .samples {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .sample-box {
-      width: 160px;
-      height: 100px;
-      background: #1a3e5f;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #bbdefb;
-      font-size: 1rem;
-      transition: transform 0.3s;
-    }
-
-    .sample-box:hover {
-      transform: scale(1.05);
-      background: #4fc3f7;
-      color: #000;
     }
 
     .contact {
       margin-top: 40px;
-      text-align: center;
     }
 
     .contact h3 {
@@ -153,31 +110,27 @@
     }
 
     @media (max-width: 600px) {
-      .header {
+      .nav-row {
         flex-direction: column;
         align-items: flex-start;
-      }
-      .nav-buttons {
-        margin-top: 10px;
-        width: 100%;
-        justify-content: space-around;
+        gap: 8px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="left-section">
-      <img src="logo.png" alt="Logo" class="logo">
-      <div class="name">Poster Wala</div>
-    </div>
-    <div class="nav-buttons">
-      <button onclick="showHome()">Home</button>
-      <button onclick="showSamples()">Design Samples</button>
+  <div class="topbar">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="nav-row">
+      <div class="brand-name">Poster Wala</div>
+      <div class="nav-buttons">
+        <button onclick="showHome()">Home</button>
+        <button onclick="showSamples()">Design Samples</button>
+      </div>
     </div>
   </div>
 
-  <div class="main-content" id="mainContent">
+  <div class="main" id="mainContent">
     <h1>Welcome to Poster Wala</h1>
     <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
 
@@ -199,7 +152,6 @@
       document.getElementById("mainContent").innerHTML = `
         <h1>Welcome to Poster Wala</h1>
         <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
-
         <div class="contact">
           <h3>Contact Me</h3>
           <div class="contact-icons">
@@ -217,55 +169,7 @@
     function showSamples() {
       document.getElementById("mainContent").innerHTML = `
         <h1>Design Samples</h1>
-
-        <div class="category">
-          <h2>Posters</h2>
-          <div class="samples">
-            <div class="sample-box">Poster 1</div>
-            <div class="sample-box">Poster 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Wedding Cards</h2>
-          <div class="samples">
-            <div class="sample-box">Card 1</div>
-            <div class="sample-box">Card 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Logos</h2>
-          <div class="samples">
-            <div class="sample-box">Logo 1</div>
-            <div class="sample-box">Logo 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Social Media Posts</h2>
-          <div class="samples">
-            <div class="sample-box">Post 1</div>
-            <div class="sample-box">Post 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Videos</h2>
-          <div class="samples">
-            <div class="sample-box">Video 1</div>
-            <div class="sample-box">Video 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Business Cards</h2>
-          <div class="samples">
-            <div class="sample-box">Card 1</div>
-            <div class="sample-box">Card 2</div>
-          </div>
-        </div>
-
+        <p>Check out some of my best works categorized below.</p>
         <div class="contact">
           <h3>Contact Me</h3>
           <div class="contact-icons">
