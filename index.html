@@ -115,15 +115,34 @@
       margin-bottom: 30px;
     }
 
-    .content ul {
-      list-style: disc;
-      margin-left: 20px;
-      text-align: left;
+    .samples-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
-    .category h3 {
+    .sample-box {
+      background: #163d5b;
+      border-radius: 12px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .sample-box h3 {
       color: #4fc3f7;
-      margin: 20px 0 10px;
+      margin-bottom: 10px;
+    }
+
+    .sample-box ul {
+      list-style: disc;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .sample-box ul li {
+      margin-bottom: 6px;
     }
 
     .contact {
@@ -180,122 +199,6 @@
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="left-section">
-      <img src="logo.png" alt="Logo" class="logo" />
-      <div class="name">Poster Wala</div>
-    </div>
-    <div class="buttons">
-      <button onclick="showHome()">Home</button>
-      <button onclick="showSamples()">Design Samples</button>
-    </div>
-  </div>
-
-  <div class="main">
-    <div class="sidebar">
-      <img src="logo.png" alt="Logo" class="logo" />
-      <div class="name">Poster Wala</div>
-    </div>
-
-    <div class="content" id="mainContent">
-      <h1>Welcome to Poster Wala</h1>
-      <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
-
-      <div class="contact">
-        <h3>Contact Me</h3>
-        <div class="contact-icons">
-          <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="https://wa.me/911234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://www.fiverr.com/yourfiverrusername" target="_blank"><i class="fas fa-briefcase"></i></a>
-          <a href="mailto:youremail@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+911234567890"><i class="fas fa-phone-alt"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function showHome() {
-      document.getElementById("mainContent").innerHTML = `
-        <h1>Welcome to Poster Wala</h1>
-        <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
-
-        <div class="contact">
-          <h3>Contact Me</h3>
-          <div class="contact-icons">
-            <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/911234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.fiverr.com/yourfiverrusername" target="_blank"><i class="fas fa-briefcase"></i></a>
-            <a href="mailto:youremail@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+911234567890"><i class="fas fa-phone-alt"></i></a>
-          </div>
-        </div>
-      `;
-    }
-
-    function showSamples() {
-      document.getElementById("mainContent").innerHTML = `
-        <h1>Design Samples</h1>
-        <p>Check out some of my best works categorized below.</p>
-        
-        <div class="category">
-          <h3>📌 Posters</h3>
-          <ul>
-            <li>Festival Poster</li>
-            <li>Event Promotion</li>
-            <li>Advertisement Posters</li>
-          </ul>
-
-          <h3>💌 Wedding Cards</h3>
-          <ul>
-            <li>Hindu Wedding Card</li>
-            <li>Muslim Wedding Card</li>
-            <li>Modern Digital Cards</li>
-          </ul>
-
-          <h3>🎨 Logos</h3>
-          <ul>
-            <li>Business Logos</li>
-            <li>Personal Logos</li>
-            <li>Minimalistic Logos</li>
-          </ul>
-
-          <h3>📇 Business Cards</h3>
-          <ul>
-            <li>Front & Back Cards</li>
-            <li>QR Code Integrated</li>
-          </ul>
-
-          <h3>📱 Social Media Posts</h3>
-          <ul>
-            <li>Instagram Story/Post</li>
-            <li>Facebook Banners</li>
-            <li>WhatsApp Posters</li>
-          </ul>
-
-          <h3>🎬 Videos</h3>
-          <ul>
-            <li>Intro Videos</li>
-            <li>Festival Motion Posters</li>
-            <li>Wedding Video Templates</li>
-          </ul>
-        </div>
-
-        <div class="contact">
-          <h3>Contact Me</h3>
-          <div class="contact-icons">
-            <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/911234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.fiverr.com/yourfiverrusername" target="_blank"><i class="fas fa-briefcase"></i></a>
-            <a href="mailto:youremail@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+911234567890"><i class="fas fa-phone-alt"></i></a>
-          </div>
-        </div>
-      `;
-    }
-  </script>
+  <!-- Website HTML code continues below -->
 </body>
 </html>
