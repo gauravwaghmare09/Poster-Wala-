@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Poster Wala | Graphic Designer</title>
   <style>
     * {
@@ -8,151 +10,169 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
-    }body {
-  display: flex;
-  height: 100vh;
-  background: #1f1f1f;
-  color: #f5f5f5;
-}
+    }
 
-.sidebar {
-  width: 250px;
-  background: #141414;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-}
+    body {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      background: #1f1f1f;
+      color: #f5f5f5;
+      overflow: hidden;
+    }
 
-.logo {
-  width: 150px;
-  border-radius: 50%;
-  border: 2px solid #f0b6d4;
-}
+    .sidebar {
+      width: 250px;
+      background: #141414;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    }
 
-.name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  color: #f0b6d4;
-}
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #f0b6d4;
+      object-fit: cover;
+    }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 30px;
-}
+    .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: #f0b6d4;
+    }
 
-.nav button {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  background: #292929;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
+    .nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 30px;
+    }
 
-.nav button:hover {
-  background: #f0b6d4;
-  color: #000;
-}
+    .nav button {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      background: #292929;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
 
-.content {
-  flex: 1;
-  padding: 40px;
-  overflow-y: auto;
-}
+    .nav button:hover {
+      background: #f0b6d4;
+      color: #000;
+    }
 
-.category {
-  margin-bottom: 30px;
-}
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
 
-.category h2 {
-  margin-bottom: 10px;
-  color: #f0b6d4;
-  border-bottom: 1px solid #f0b6d4;
-  padding-bottom: 5px;
-}
+    .content::-webkit-scrollbar {
+      width: 8px;
+    }
 
-.samples {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
+    .content::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 10px;
+    }
 
-.sample-box {
-  height: 150px;
-  background: #333;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: #bbb;
-}
+    .category {
+      margin-bottom: 30px;
+    }
+
+    .category h2 {
+      margin-bottom: 10px;
+      color: #f0b6d4;
+      border-bottom: 1px solid #f0b6d4;
+      padding-bottom: 5px;
+    }
+
+    .samples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .sample-box {
+      height: 150px;
+      background: #333;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px;
+      }
+
+      .nav {
+        flex-direction: row;
+        margin-top: 0;
+      }
+
+      .nav button {
+        margin: 0 5px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+    }
 
   </style>
-</head><body>
+</head>
+<body>
   <div class="sidebar">
-    <img src="logo.png" alt="Logo" class="logo" />
+    <img src="logo.png" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/120'" />
     <div class="name">Poster Wala</div>
     <div class="nav">
       <button onclick="showSamples()">Design Samples</button>
     </div>
-  </div>  <div class="content" id="mainContent">
+  </div>
+
+  <div class="content" id="mainContent">
     <h1>Welcome to Poster Wala's Portfolio</h1>
     <p>Click on "Design Samples" to view categorized designs.</p>
-  </div>  <script>
+  </div>
+
+  <script>
     function showSamples() {
       document.getElementById("mainContent").innerHTML = `
-        <div class="category">
-          <h2>Posters</h2>
-          <div class="samples">
-            <div class="sample-box">Poster 1</div>
-            <div class="sample-box">Poster 2</div>
-          </div>
-        </div>
-        <div class="category">
-          <h2>Wedding Cards</h2>
-          <div class="samples">
-            <div class="sample-box">Card 1</div>
-            <div class="sample-box">Card 2</div>
-          </div>
-        </div>
-        <div class="category">
-          <h2>Logos</h2>
-          <div class="samples">
-            <div class="sample-box">Logo 1</div>
-            <div class="sample-box">Logo 2</div>
-          </div>
-        </div>
-        <div class="category">
-          <h2>Business Cards</h2>
-          <div class="samples">
-            <div class="sample-box">Card 1</div>
-            <div class="sample-box">Card 2</div>
-          </div>
-        </div>
-        <div class="category">
-          <h2>Social Media Posts</h2>
-          <div class="samples">
-            <div class="sample-box">Post 1</div>
-            <div class="sample-box">Post 2</div>
-          </div>
-        </div>
-        <div class="category">
-          <h2>Videos</h2>
-          <div class="samples">
-            <div class="sample-box">Video 1</div>
-            <div class="sample-box">Video 2</div>
-          </div>
-        </div>
+        ${["Posters", "Wedding Cards", "Logos", "Business Cards", "Social Media Posts", "Videos"]
+          .map(category => `
+            <div class="category">
+              <h2>${category}</h2>
+              <div class="samples">
+                <div class="sample-box">${category.slice(0, -1)} 1</div>
+                <div class="sample-box">${category.slice(0, -1)} 2</div>
+              </div>
+            </div>
+          `).join("")}
       `;
     }
-  </script></body></html>
+  </script>
+</body>
+</html>
