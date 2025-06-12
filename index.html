@@ -13,17 +13,20 @@
     }
 
     body {
-      background: #1f1f1f;
-      color: #f5f5f5;
+      background: #0f1e2e;
+      color: #f0f8ff;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #141414;
-      padding: 10px 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      background: #091421;
+      padding: 12px 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .left-section {
@@ -36,51 +39,58 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      border: 2px solid #f0b6d4;
+      border: 2px solid #66ccff;
       object-fit: cover;
       margin-bottom: 4px;
     }
 
     .name {
-      font-size: 0.85rem; /* aur chhota kiya */
+      font-size: 0.85rem;
       font-weight: bold;
-      color: #f0b6d4;
+      color: #66ccff;
     }
 
     .nav {
       display: flex;
-      gap: 10px;
+      gap: 12px;
+      justify-content: center;
+      flex: 1;
     }
 
     .nav button {
-      padding: 6px 12px; /* chhota kiya */
-      background: #292929;
+      padding: 6px 14px;
+      background: #1e3a56;
       border: none;
-      color: #fff;
+      color: #f0f8ff;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 0.85rem; /* font bhi chhota kiya */
-      transition: background 0.3s;
+      font-size: 0.85rem;
+      transition: background 0.3s, transform 0.2s;
     }
 
     .nav button:hover {
-      background: #f0b6d4;
+      background: #66ccff;
       color: #000;
+      transform: scale(1.05);
+    }
+
+    .right-placeholder {
+      width: 80px; /* balance create karta hai */
     }
 
     .content {
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .content h1 {
-      color: #f0b6d4;
-      font-size: 2rem;
+      color: #66ccff;
+      font-size: 2.2rem;
       margin-bottom: 10px;
     }
 
     .content p {
-      color: #ccc;
+      color: #cceeff;
       margin-bottom: 40px;
     }
 
@@ -90,8 +100,8 @@
 
     .category h2 {
       margin-bottom: 15px;
-      color: #f0b6d4;
-      border-bottom: 1px solid #f0b6d4;
+      color: #66ccff;
+      border-bottom: 1px solid #66ccff;
       padding-bottom: 5px;
     }
 
@@ -105,28 +115,30 @@
     .sample-box {
       width: 180px;
       height: 120px;
-      background: #333;
+      background: #17324d;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      color: #bbb;
+      color: #bbdfff;
       transition: transform 0.3s;
     }
 
     .sample-box:hover {
       transform: scale(1.05);
+      background: #66ccff;
+      color: #000;
     }
 
     .contact {
       margin-top: 60px;
-      color: #ccc;
+      color: #bbdfff;
     }
 
     .contact h3 {
       margin-bottom: 10px;
-      color: #f0b6d4;
+      color: #66ccff;
     }
 
     .contact p {
@@ -134,7 +146,7 @@
     }
 
     .contact a {
-      color: #f0b6d4;
+      color: #66ccff;
       text-decoration: none;
     }
   </style>
@@ -147,87 +159,14 @@
       <img src="logo.png" alt="Logo" class="logo" />
       <div class="name">Poster Wala</div>
     </div>
+
     <div class="nav">
       <button onclick="showHome()">Home</button>
       <button onclick="showSamples()">Design Samples</button>
     </div>
+
+    <div class="right-placeholder"></div>
   </header>
 
   <!-- Main Content -->
-  <div class="content" id="mainContent">
-    <h1>Welcome to Poster Wala</h1>
-    <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
-  </div>
-
-  <script>
-    function showHome() {
-      document.getElementById("mainContent").innerHTML = `
-        <h1>Welcome to Poster Wala</h1>
-        <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
-      `;
-    }
-
-    function showSamples() {
-      document.getElementById("mainContent").innerHTML = `
-        <h1>Design Samples</h1>
-
-        <div class="category">
-          <h2>Posters</h2>
-          <div class="samples">
-            <div class="sample-box">Poster 1</div>
-            <div class="sample-box">Poster 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Wedding Cards</h2>
-          <div class="samples">
-            <div class="sample-box">Card 1</div>
-            <div class="sample-box">Card 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Logos</h2>
-          <div class="samples">
-            <div class="sample-box">Logo 1</div>
-            <div class="sample-box">Logo 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Social Media Posts</h2>
-          <div class="samples">
-            <div class="sample-box">Post 1</div>
-            <div class="sample-box">Post 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Videos</h2>
-          <div class="samples">
-            <div class="sample-box">Video 1</div>
-            <div class="sample-box">Video 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Business Cards</h2>
-          <div class="samples">
-            <div class="sample-box">Card 1</div>
-            <div class="sample-box">Card 2</div>
-          </div>
-        </div>
-
-        <div class="contact">
-          <h3>Contact Me</h3>
-          <p>📷 Instagram: <a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></p>
-          <p>📧 Gmail: <a href="mailto:youremail@gmail.com">youremail@gmail.com</a></p>
-          <p>📞 Phone: <a href="tel:+911234567890">+91 1234567890</a></p>
-        </div>
-      `;
-    }
-  </script>
-
-</body>
-</html>
+  <div class="content
