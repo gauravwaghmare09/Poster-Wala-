@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Poster Wala | Graphic Designer</title>
+  <title>Poster Wala</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
@@ -16,51 +16,20 @@
     body {
       background: #0e1e2e;
       color: #e0f7ff;
+      display: flex;
       min-height: 100vh;
-      display: flex;
       flex-direction: column;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: center;
-      padding: 10px 20px;
-      background: #134d76;
-      flex-wrap: wrap;
-    }
-
-    .topbar-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .topbar button {
-      background: #1e88e5;
-      color: #fff;
-      border: none;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .topbar button:hover {
-      background: #90caf9;
-      color: #000;
     }
 
     .main {
       display: flex;
       flex: 1;
-      flex-direction: row;
     }
 
     .sidebar {
-      width: 200px;
+      width: 220px;
       background: #0b2c44;
-      padding: 20px;
+      padding: 20px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -72,28 +41,45 @@
       height: 70px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 8px;
       border: 2px solid #90caf9;
+      margin-bottom: 10px;
     }
 
     .name {
       font-size: 1rem;
       font-weight: bold;
       color: #90caf9;
-      margin-bottom: 20px;
       text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar button {
+      background: #1e88e5;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      margin: 5px 0;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 90%;
+      transition: 0.3s;
+    }
+
+    .sidebar button:hover {
+      background: #90caf9;
+      color: #000;
     }
 
     .content {
       flex: 1;
       padding: 30px 20px;
-      text-align: center;
       overflow-y: auto;
     }
 
     .content h1 {
-      color: #90caf9;
       font-size: 2rem;
+      color: #90caf9;
       margin-bottom: 10px;
     }
 
@@ -116,8 +102,8 @@
     .samples {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 15px;
+      justify-content: center;
     }
 
     .sample-box {
@@ -129,23 +115,25 @@
       align-items: center;
       justify-content: center;
       color: #bbdefb;
-      font-size: 1rem;
-      transition: transform 0.3s;
+      transition: 0.3s;
     }
 
     .sample-box:hover {
-      transform: scale(1.05);
       background: #4fc3f7;
       color: #000;
+      transform: scale(1.05);
     }
 
     .contact {
       margin-top: 40px;
+      border-top: 1px solid #4fc3f7;
+      padding-top: 20px;
     }
 
     .contact h3 {
       color: #4fc3f7;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .contact-icons {
@@ -159,14 +147,13 @@
 
     .contact-icons a {
       color: #90caf9;
-      transition: transform 0.3s;
+      transition: 0.3s;
     }
 
     .contact-icons a:hover {
       transform: scale(1.2);
     }
 
-    /* ✅ Responsive Design for Mobile */
     @media (max-width: 768px) {
       .main {
         flex-direction: column;
@@ -175,19 +162,19 @@
       .sidebar {
         width: 100%;
         flex-direction: row;
-        justify-content: center;
-        padding: 10px;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
       }
 
-      .logo {
-        width: 50px;
-        height: 50px;
-        margin: 0 10px 0 0;
+      .sidebar .name {
+        margin-bottom: 0;
       }
 
-      .name {
-        font-size: 1rem;
-        margin: 0;
+      .sidebar button {
+        width: auto;
+        margin: 5px;
+        padding: 8px 12px;
       }
 
       .content {
@@ -198,52 +185,49 @@
         width: 120px;
         height: 80px;
       }
-
-      .topbar {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .topbar-buttons {
-        justify-content: center;
-        width: 100%;
-      }
     }
   </style>
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="topbar-buttons">
-      <button onclick="showHome()">Home</button>
-      <button onclick="showSamples()">Design Samples</button>
-    </div>
-  </div>
-
   <div class="main">
     <div class="sidebar">
       <img src="logo.png" alt="Logo" class="logo" />
       <div class="name">Poster Wala</div>
+      <button onclick="showHome()">Home</button>
+      <button onclick="showSamples()">Design Samples</button>
+      <button onclick="showHome()">Contact</button>
     </div>
 
     <div class="content" id="mainContent">
-      <h1>Welcome to Poster Wala</h1>
-      <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
+      <!-- Content will load dynamically -->
     </div>
   </div>
 
   <script>
+    const contactHTML = `
+      <div class="contact">
+        <h3>Contact Me</h3>
+        <div class="contact-icons">
+          <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/91xxxxxxxxxx" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+91xxxxxxxxxx"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+    `;
+
     function showHome() {
       document.getElementById("mainContent").innerHTML = `
         <h1>Welcome to Poster Wala</h1>
         <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
+        ${contactHTML}
       `;
     }
 
     function showSamples() {
-      document.getElementById("mainContent").innerHTML = \`
+      document.getElementById("mainContent").innerHTML = `
         <h1>Design Samples</h1>
-
         <div class="category">
           <h2>Posters</h2>
           <div class="samples">
@@ -251,7 +235,6 @@
             <div class="sample-box">Poster 2</div>
           </div>
         </div>
-
         <div class="category">
           <h2>Wedding Cards</h2>
           <div class="samples">
@@ -259,7 +242,6 @@
             <div class="sample-box">Card 2</div>
           </div>
         </div>
-
         <div class="category">
           <h2>Logos</h2>
           <div class="samples">
@@ -267,44 +249,12 @@
             <div class="sample-box">Logo 2</div>
           </div>
         </div>
-
-        <div class="category">
-          <h2>Social Media Posts</h2>
-          <div class="samples">
-            <div class="sample-box">Post 1</div>
-            <div class="sample-box">Post 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Videos</h2>
-          <div class="samples">
-            <div class="sample-box">Video 1</div>
-            <div class="sample-box">Video 2</div>
-          </div>
-        </div>
-
-        <div class="category">
-          <h2>Business Cards</h2>
-          <div class="samples">
-            <div class="sample-box">Card 1</div>
-            <div class="sample-box">Card 2</div>
-          </div>
-        </div>
-
-        <div class="contact">
-          <h3>Contact Me</h3>
-          <div class="contact-icons">
-            <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/911234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.fiverr.com/yourfiverrusername" target="_blank"><i class="fas fa-briefcase"></i></a>
-            <a href="mailto:youremail@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+911234567890"><i class="fas fa-phone-alt"></i></a>
-          </div>
-        </div>
-      \`;
+        ${contactHTML}
+      `;
     }
+
+    // Load home content by default
+    showHome();
   </script>
 </body>
 </html>
