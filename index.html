@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Poster Wala | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poster Wala | Graphic Designer</title>
   <style>
     * {
       margin: 0;
@@ -14,50 +14,45 @@
 
     body {
       display: flex;
-      height: 100vh;
+      min-height: 100vh;
       background: #1f1f1f;
       color: #f5f5f5;
     }
 
     .sidebar {
-      width: 230px;
+      width: 220px;
       background: #141414;
       padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
+      gap: 15px;
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .top-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
     }
 
     .logo {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      object-fit: cover;
       border: 2px solid #f0b6d4;
+      object-fit: cover;
     }
 
     .name {
       font-size: 1.2rem;
       font-weight: bold;
-      color: #f0b6d4;
       text-align: center;
+      color: #f0b6d4;
     }
 
     .nav {
-      margin-top: 15px;
+      width: 100%;
+      margin-top: 20px;
     }
 
     .nav button {
-      padding: 10px 15px;
+      width: 100%;
+      padding: 10px;
       border: none;
       background: #292929;
       color: #fff;
@@ -72,111 +67,176 @@
       color: #000;
     }
 
-    .contact {
+    .content {
+      flex: 1;
+      padding: 40px 60px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .intro {
       text-align: center;
-      font-size: 0.9rem;
+    }
+
+    .intro h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #f0b6d4;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
       color: #ccc;
     }
 
-    .contact p {
-      margin: 5px 0;
-      word-break: break-word;
-    }
-
-    .content {
-      flex: 1;
-      padding: 40px;
-      overflow-y: auto;
+    .category {
+      margin-bottom: 30px;
     }
 
     .category h2 {
-      color: #f0b6d4;
       margin-bottom: 10px;
+      color: #f0b6d4;
       border-bottom: 1px solid #f0b6d4;
       padding-bottom: 5px;
     }
 
     .samples {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
 
-    .sample-box {
+    .sample-box img {
+      width: 100%;
       height: 150px;
-      background: #333;
+      object-fit: cover;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      color: #bbb;
+      transition: transform 0.3s;
     }
 
-    /* Mobile responsive */
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
+    .sample-box img:hover {
+      transform: scale(1.05);
+    }
 
-      .sidebar {
-        flex-direction: row;
-        width: 100%;
-        height: auto;
-        padding: 10px;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
+    .contact {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #aaa;
+    }
 
-      .top-section, .contact {
-        flex: 1 1 100%;
-        text-align: center;
-      }
+    .contact a {
+      color: #f0b6d4;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
 
-      .nav {
-        margin-top: 10px;
-      }
+    .form-section {
+      text-align: center;
+    }
+
+    .form-section h3 {
+      color: #f0b6d4;
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: #292929;
+      color: #fff;
+    }
+
+    form button {
+      padding: 10px;
+      border: none;
+      background: #f0b6d4;
+      color: #000;
+      cursor: pointer;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-
   <div class="sidebar">
-    <div class="top-section">
-      <img src="logo.png" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/80'" />
-      <div class="name">Poster Wala</div>
-      <div class="nav">
-        <button onclick="showSamples()">Design Samples</button>
-      </div>
-    </div>
-    <div class="contact">
-      <p><strong>Instagram:</strong> @posterwala_design</p>
-      <p><strong>Email:</strong> posterwala@gmail.com</p>
-      <p><strong>Phone:</strong> +91 98765 43210</p>
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="name">Poster Wala</div>
+    <div class="nav">
+      <button onclick="scrollToSamples()">Design Samples</button>
     </div>
   </div>
 
-  <div class="content" id="mainContent">
-    <h1>Welcome to Poster Wala's Portfolio</h1>
-    <p>Click on "Design Samples" to view categorized designs.</p>
+  <div class="content">
+    <!-- Welcome -->
+    <div class="intro">
+      <h1>Welcome to Poster Wala</h1>
+      <p>I design Posters, Wedding Cards, Logos, Social Media Posts, and more. Scroll down to view my work.</p>
+    </div>
+
+    <!-- Design Samples -->
+    <div id="samplesSection">
+      <div class="category">
+        <h2>Posters</h2>
+        <div class="samples">
+          <div class="sample-box"><img src="poster1.jpg" alt="Poster 1" /></div>
+          <div class="sample-box"><img src="poster2.jpg" alt="Poster 2" /></div>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2>Logos</h2>
+        <div class="samples">
+          <div class="sample-box"><img src="logo1.jpg" alt="Logo 1" /></div>
+          <div class="sample-box"><img src="logo2.jpg" alt="Logo 2" /></div>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2>Wedding Cards</h2>
+        <div class="samples">
+          <div class="sample-box"><img src="card1.jpg" alt="Card 1" /></div>
+          <div class="sample-box"><img src="card2.jpg" alt="Card 2" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact">
+      <h3>Contact Me</h3>
+      <a href="https://instagram.com/yourusername" target="_blank">📷 Instagram: @yourusername</a>
+      <a href="mailto:youremail@gmail.com">📧 Gmail: youremail@gmail.com</a>
+      <a href="tel:+911234567890">📞 Phone: +91 1234567890</a>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="form-section">
+      <h3>Or Drop a Message</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </div>
 
   <script>
-    function showSamples() {
-      document.getElementById("mainContent").innerHTML = `
-        ${["Posters", "Wedding Cards", "Logos", "Business Cards", "Social Media Posts", "Videos"]
-          .map(category => `
-            <div class="category">
-              <h2>${category}</h2>
-              <div class="samples">
-                <div class="sample-box">${category.slice(0, -1)} 1</div>
-                <div class="sample-box">${category.slice(0, -1)} 2</div>
-              </div>
-            </div>
-          `).join("")}
-      `;
+    function scrollToSamples() {
+      const section = document.getElementById("samplesSection");
+      section.scrollIntoView({ behavior: "smooth" });
     }
   </script>
-
 </body>
 </html>
