@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,191 +10,190 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
-    }
+    }body {
+  background: #0e1e2e;
+  color: #e0f7ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    body {
-      background: #0e1e2e;
-      color: #e0f7ff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #134d76;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
 
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #134d76;
-      padding: 10px 20px;
-      flex-wrap: wrap;
-    }
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .left-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #90caf9;
+}
 
-    .logo {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #90caf9;
-    }
+.name {
+  color: #90caf9;
+  font-weight: bold;
+  font-size: 1rem;
+}
 
-    .name {
-      color: #90caf9;
-      font-weight: bold;
-      font-size: 1rem;
-    }
+.buttons {
+  display: flex;
+  gap: 10px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 10px;
-    }
+.buttons button {
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    .buttons button {
-      background: #1e88e5;
-      color: #fff;
-      border: none;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+.buttons button:hover {
+  background: #90caf9;
+  color: #000;
+}
 
-    .buttons button:hover {
-      background: #90caf9;
-      color: #000;
-    }
+.main {
+  display: flex;
+  flex: 1;
+}
 
-    .main {
-      display: flex;
-      flex: 1;
-    }
+.sidebar {
+  width: 200px;
+  background: #0b2c44;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
 
-    .sidebar {
-      width: 200px;
-      background: #0b2c44;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-    }
+.sidebar .logo {
+  width: 70px;
+  height: 70px;
+}
 
-    .sidebar .logo {
-      width: 70px;
-      height: 70px;
-    }
+.sidebar .name {
+  font-size: 1rem;
+  margin-top: 8px;
+  text-align: center;
+}
 
-    .sidebar .name {
-      font-size: 1rem;
-      margin-top: 8px;
-      text-align: center;
-    }
+.content {
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+  overflow-y: auto;
+}
 
-    .content {
-      flex: 1;
-      padding: 40px 20px;
-      text-align: center;
-      overflow-y: auto;
-    }
+.content h1 {
+  color: #90caf9;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
 
-    .content h1 {
-      color: #90caf9;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+.content p {
+  color: #bbdefb;
+  margin-bottom: 30px;
+}
 
-    .content p {
-      color: #bbdefb;
-      margin-bottom: 30px;
-    }
+.samples-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
-    .samples-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+.sample-box {
+  background: #163d5b;
+  border-radius: 12px;
+  padding: 15px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
 
-    .sample-box {
-      background: #163d5b;
-      border-radius: 12px;
-      padding: 15px;
-      width: 280px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    }
+.sample-box h3 {
+  color: #4fc3f7;
+  margin-bottom: 10px;
+}
 
-    .sample-box h3 {
-      color: #4fc3f7;
-      margin-bottom: 10px;
-    }
+.sample-box ul {
+  list-style: disc;
+  text-align: left;
+  padding-left: 20px;
+}
 
-    .sample-box ul {
-      list-style: disc;
-      text-align: left;
-      padding-left: 20px;
-    }
+.sample-box ul li {
+  margin-bottom: 6px;
+}
 
-    .sample-box ul li {
-      margin-bottom: 6px;
-    }
+.contact {
+  margin-top: 40px;
+}
 
-    .contact {
-      margin-top: 40px;
-    }
+.contact h3 {
+  color: #4fc3f7;
+  margin-bottom: 10px;
+}
 
-    .contact h3 {
-      color: #4fc3f7;
-      margin-bottom: 10px;
-    }
+.contact-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.6rem;
+}
 
-    .contact-icons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      font-size: 1.6rem;
-    }
+.contact-icons a {
+  color: #90caf9;
+  transition: transform 0.3s;
+}
 
-    .contact-icons a {
-      color: #90caf9;
-      transition: transform 0.3s;
-    }
+.contact-icons a:hover {
+  transform: scale(1.2);
+}
 
-    .contact-icons a:hover {
-      transform: scale(1.2);
-    }
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
 
-    @media (max-width: 768px) {
-      .main {
-        flex-direction: column;
-      }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
 
-      .sidebar {
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-      }
+  .content {
+    padding: 20px 10px;
+  }
 
-      .content {
-        padding: 20px 10px;
-      }
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-      .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+  .buttons {
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+}
 
-      .buttons {
-        margin-top: 10px;
-        flex-wrap: wrap;
-      }
-    }
   </style>
 </head>
 <body>
