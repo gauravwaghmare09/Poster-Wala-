@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Poster Wala</title>
+  <title>Poster Wala | Graphic Designer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
@@ -27,36 +27,13 @@
       align-items: center;
       padding: 10px 20px;
       background: #134d76;
-      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #90caf9;
-    }
-
-    .name {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #90caf9;
-    }
-
-    .topbar-center,
-    .topbar-right {
-      display: flex;
-      gap: 10px;
-    }
-
-    .topbar button {
+    .topbar .center-btn,
+    .topbar .right-btn {
       background: #1e88e5;
       color: #fff;
       border: none;
@@ -67,21 +44,52 @@
       transition: background 0.3s;
     }
 
-    .topbar button:hover {
+    .topbar .center-btn:hover,
+    .topbar .right-btn:hover {
       background: #90caf9;
       color: #000;
     }
 
+    .main {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: #0b2c44;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #90caf9;
+    }
+
+    .name {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #90caf9;
+      margin-top: 10px;
+    }
+
     .content {
       flex: 1;
-      padding: 30px 20px;
-      overflow-y: auto;
+      padding: 30px 20px 80px;
       text-align: center;
+      overflow-y: auto;
     }
 
     .content h1 {
-      font-size: 2rem;
       color: #90caf9;
+      font-size: 2rem;
       margin-bottom: 10px;
     }
 
@@ -104,32 +112,31 @@
     .samples {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
       justify-content: center;
+      gap: 15px;
     }
 
     .sample-box {
-      width: 140px;
-      height: 90px;
+      width: 160px;
+      height: 100px;
       background: #1a3e5f;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #bbdefb;
-      transition: 0.3s;
+      font-size: 1rem;
+      transition: transform 0.3s;
     }
 
     .sample-box:hover {
+      transform: scale(1.05);
       background: #4fc3f7;
       color: #000;
-      transform: scale(1.05);
     }
 
     .contact {
       margin-top: 40px;
-      border-top: 1px solid #4fc3f7;
-      padding-top: 20px;
     }
 
     .contact h3 {
@@ -141,14 +148,13 @@
       margin-top: 15px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 20px;
       font-size: 1.6rem;
     }
 
     .contact-icons a {
       color: #90caf9;
-      transition: 0.3s;
+      transition: transform 0.3s;
     }
 
     .contact-icons a:hover {
@@ -156,21 +162,25 @@
     }
 
     @media (max-width: 768px) {
-      .topbar {
+      .main {
         flex-direction: column;
-        align-items: flex-start;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
         gap: 10px;
       }
 
-      .topbar-center,
-      .topbar-right {
-        width: 100%;
-        justify-content: flex-start;
+      .topbar {
+        flex-direction: column;
+        gap: 10px;
       }
 
-      .sample-box {
-        width: 120px;
-        height: 80px;
+      .contact-icons {
+        flex-wrap: wrap;
+        gap: 15px;
       }
     }
   </style>
@@ -178,42 +188,44 @@
 <body>
 
   <div class="topbar">
-    <div class="topbar-left">
+    <div></div>
+    <button class="center-btn" onclick="showHome()">Home</button>
+    <button class="right-btn" onclick="showSamples()">Design Samples</button>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
       <img src="logo.png" alt="Logo" class="logo" />
       <div class="name">Poster Wala</div>
     </div>
 
-    <div class="topbar-center">
-      <button onclick="showHome()">Home</button>
+    <div class="content" id="mainContent">
+      <!-- Content injected by JS -->
     </div>
-
-    <div class="topbar-right">
-      <button onclick="showSamples()">Design Samples</button>
-    </div>
-  </div>
-
-  <div class="content" id="mainContent">
-    <!-- Content will load here -->
   </div>
 
   <script>
-    const contactHTML = `
-      <div class="contact">
-        <h3>Contact Me</h3>
-        <div class="contact-icons">
-          <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/91xxxxxxxxxx" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+91xxxxxxxxxx"><i class="fas fa-phone"></i></a>
+    function renderContactSection() {
+      return `
+        <div class="contact">
+          <h3>Contact Me</h3>
+          <div class="contact-icons">
+            <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/911234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.fiverr.com/yourfiverrusername" target="_blank"><i class="fas fa-briefcase"></i></a>
+            <a href="mailto:youremail@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+911234567890"><i class="fas fa-phone-alt"></i></a>
+          </div>
         </div>
-      </div>
-    `;
+      `;
+    }
 
     function showHome() {
       document.getElementById("mainContent").innerHTML = `
         <h1>Welcome to Poster Wala</h1>
         <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
-        ${contactHTML}
+        ${renderContactSection()}
       `;
     }
 
@@ -227,6 +239,7 @@
             <div class="sample-box">Poster 2</div>
           </div>
         </div>
+
         <div class="category">
           <h2>Wedding Cards</h2>
           <div class="samples">
@@ -234,6 +247,7 @@
             <div class="sample-box">Card 2</div>
           </div>
         </div>
+
         <div class="category">
           <h2>Logos</h2>
           <div class="samples">
@@ -241,11 +255,36 @@
             <div class="sample-box">Logo 2</div>
           </div>
         </div>
-        ${contactHTML}
+
+        <div class="category">
+          <h2>Social Media Posts</h2>
+          <div class="samples">
+            <div class="sample-box">Post 1</div>
+            <div class="sample-box">Post 2</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2>Videos</h2>
+          <div class="samples">
+            <div class="sample-box">Video 1</div>
+            <div class="sample-box">Video 2</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2>Business Cards</h2>
+          <div class="samples">
+            <div class="sample-box">Card 1</div>
+            <div class="sample-box">Card 2</div>
+          </div>
+        </div>
+
+        ${renderContactSection()}
       `;
     }
 
-    // Load home by default
+    // Load Home on page load
     showHome();
   </script>
 </body>
