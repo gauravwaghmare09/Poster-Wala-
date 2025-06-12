@@ -25,28 +25,25 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
     }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
     .logo {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       border: 2px solid #f0b6d4;
       object-fit: cover;
+      margin-bottom: 10px;
     }
 
     .name {
       font-size: 1.3rem;
       font-weight: bold;
       color: #f0b6d4;
+      margin-bottom: 30px;
+      text-align: center;
     }
 
     .nav {
@@ -54,6 +51,7 @@
       flex-direction: row;
       gap: 10px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .nav button {
@@ -151,7 +149,7 @@
       .sidebar {
         width: 100%;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .nav {
@@ -166,12 +164,11 @@
   </style>
 </head>
 <body>
+
   <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="logo-container">
-      <img src="logo.png" alt="Logo" class="logo" />
-      <div class="name">Poster Wala</div>
-    </div>
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="name">Poster Wala</div>
     <div class="nav">
       <button onclick="showHome()">Home</button>
       <button onclick="showSamples()">Design Samples</button>
@@ -253,5 +250,6 @@
       `;
     }
   </script>
+
 </body>
 </html>
