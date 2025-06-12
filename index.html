@@ -169,4 +169,80 @@
   </header>
 
   <!-- Main Content -->
-  <div class="content
+  <div class="content" id="mainContent">
+    <h1>Welcome to Poster Wala</h1>
+    <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
+  </div>
+
+  <script>
+    function showHome() {
+      document.getElementById("mainContent").innerHTML = `
+        <h1>Welcome to Poster Wala</h1>
+        <p>I design Posters, Wedding Cards, Logos, Social Media Posts & more.<br>Click "Design Samples" to view my work.</p>
+      `;
+    }
+
+    function showSamples() {
+      document.getElementById("mainContent").innerHTML = `
+        <h1>Design Samples</h1>
+
+        <div class="category">
+          <h2>Posters</h2>
+          <div class="samples">
+            <div class="sample-box">Poster 1</div>
+            <div class="sample-box">Poster 2</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2>Wedding Cards</h2>
+          <div class="samples">
+            <div class="sample-box">Card 1</div>
+            <div class="sample-box">Card 2</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2>Logos</h2>
+          <div class="samples">
+            <div class="sample-box">Logo 1</div>
+            <div class="sample-box">Logo 2</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2>Social Media Posts</h2>
+          <div class="samples">
+            <div class="sample-box">Post 1</div>
+            <div class="sample-box">Post 2</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2>Videos</h2>
+          <div class="samples">
+            <div class="sample-box">Video 1</div>
+            <div class="sample-box">Video 2</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2>Business Cards</h2>
+          <div class="samples">
+            <div class="sample-box">Card 1</div>
+            <div class="sample-box">Card 2</div>
+          </div>
+        </div>
+
+        <div class="contact">
+          <h3>Contact Me</h3>
+          <p>📷 Instagram: <a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></p>
+          <p>📧 Gmail: <a href="mailto:youremail@gmail.com">youremail@gmail.com</a></p>
+          <p>📞 Phone: <a href="tel:+911234567890">+91 1234567890</a></p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
