@@ -24,9 +24,10 @@
     .topbar {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 10px;
       padding: 10px;
       background: #134d76;
+      flex-wrap: wrap;
     }
 
     .topbar button {
@@ -48,6 +49,7 @@
     .main {
       display: flex;
       flex: 1;
+      flex-direction: row;
     }
 
     .sidebar {
@@ -79,7 +81,7 @@
 
     .content {
       flex: 1;
-      padding: 40px 20px;
+      padding: 30px 20px;
       text-align: center;
       overflow-y: auto;
     }
@@ -114,8 +116,8 @@
     }
 
     .sample-box {
-      width: 160px;
-      height: 100px;
+      width: 150px;
+      height: 90px;
       background: #1a3e5f;
       border-radius: 8px;
       display: flex;
@@ -145,6 +147,7 @@
       margin-top: 15px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
       font-size: 1.6rem;
     }
@@ -156,6 +159,35 @@
 
     .contact-icons a:hover {
       transform: scale(1.2);
+    }
+
+    /* 👇 Mobile Responsive */
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 0;
+      }
+
+      .name {
+        margin-bottom: 0;
+      }
+
+      .content {
+        padding: 20px 10px;
+      }
+
+      .sample-box {
+        width: 100px;
+        height: 70px;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
