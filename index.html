@@ -24,10 +24,17 @@
     .topbar {
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
       padding: 10px 20px;
       background: #134d76;
       flex-wrap: wrap;
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     .top-logo {
@@ -36,6 +43,12 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #90caf9;
+    }
+
+    .topbar-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .topbar button {
@@ -57,6 +70,7 @@
     .main {
       display: flex;
       flex: 1;
+      flex-direction: row;
     }
 
     .sidebar {
@@ -88,7 +102,7 @@
 
     .content {
       flex: 1;
-      padding: 40px 20px;
+      padding: 30px 20px;
       text-align: center;
       overflow-y: auto;
     }
@@ -123,8 +137,8 @@
     }
 
     .sample-box {
-      width: 160px;
-      height: 100px;
+      width: 140px;
+      height: 90px;
       background: #1a3e5f;
       border-radius: 8px;
       display: flex;
@@ -154,6 +168,7 @@
       margin-top: 15px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
       font-size: 1.6rem;
     }
@@ -166,14 +181,66 @@
     .contact-icons a:hover {
       transform: scale(1.2);
     }
+
+    /* ✅ Responsive Design for Mobile */
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px 0 0;
+      }
+
+      .name {
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .content {
+        padding: 20px 10px;
+      }
+
+      .sample-box {
+        width: 120px;
+        height: 80px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .topbar-buttons {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .top-left {
+        margin-bottom: 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="topbar">
-    <img src="logo.png" alt="Logo" class="top-logo" />
-    <button onclick="showHome()">Home</button>
-    <button onclick="showSamples()">Design Samples</button>
+    <div class="top-left">
+      <img src="logo.png" alt="Logo" class="top-logo" />
+    </div>
+    <div class="topbar-buttons">
+      <button onclick="showHome()">Home</button>
+      <button onclick="showSamples()">Design Samples</button>
+    </div>
   </div>
 
   <div class="main">
