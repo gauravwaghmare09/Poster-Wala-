@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Poster Wala | Graphic Designer</title>
+  <title>Poster Wala | Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -14,49 +14,50 @@
 
     body {
       display: flex;
-      flex-direction: row;
       height: 100vh;
       background: #1f1f1f;
       color: #f5f5f5;
-      overflow: hidden;
     }
 
     .sidebar {
-      width: 250px;
+      width: 230px;
       background: #141414;
       padding: 20px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
     }
 
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
     .logo {
-      width: 120px;
-      height: 120px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      border: 2px solid #f0b6d4;
       object-fit: cover;
+      border: 2px solid #f0b6d4;
     }
 
     .name {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
-      text-align: center;
       color: #f0b6d4;
+      text-align: center;
     }
 
     .nav {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin-top: 30px;
+      margin-top: 15px;
     }
 
     .nav button {
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 10px 15px;
       border: none;
       background: #292929;
       color: #fff;
@@ -71,29 +72,26 @@
       color: #000;
     }
 
+    .contact {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .contact p {
+      margin: 5px 0;
+      word-break: break-word;
+    }
+
     .content {
       flex: 1;
       padding: 40px;
       overflow-y: auto;
-      scrollbar-width: thin;
-    }
-
-    .content::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .content::-webkit-scrollbar-thumb {
-      background: #444;
-      border-radius: 10px;
-    }
-
-    .category {
-      margin-bottom: 30px;
     }
 
     .category h2 {
-      margin-bottom: 10px;
       color: #f0b6d4;
+      margin-bottom: 10px;
       border-bottom: 1px solid #f0b6d4;
       padding-bottom: 5px;
     }
@@ -115,41 +113,46 @@
       color: #bbb;
     }
 
-    /* Responsive Design */
+    /* Mobile responsive */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
       }
 
       .sidebar {
-        width: 100%;
         flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        flex-wrap: wrap;
         justify-content: space-around;
-        padding: 15px;
+      }
+
+      .top-section, .contact {
+        flex: 1 1 100%;
+        text-align: center;
       }
 
       .nav {
-        flex-direction: row;
-        margin-top: 0;
-      }
-
-      .nav button {
-        margin: 0 5px;
-      }
-
-      .content {
-        padding: 20px;
+        margin-top: 10px;
       }
     }
-
   </style>
 </head>
 <body>
+
   <div class="sidebar">
-    <img src="logo.png" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/120'" />
-    <div class="name">Poster Wala</div>
-    <div class="nav">
-      <button onclick="showSamples()">Design Samples</button>
+    <div class="top-section">
+      <img src="logo.png" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/80'" />
+      <div class="name">Poster Wala</div>
+      <div class="nav">
+        <button onclick="showSamples()">Design Samples</button>
+      </div>
+    </div>
+    <div class="contact">
+      <p><strong>Instagram:</strong> @posterwala_design</p>
+      <p><strong>Email:</strong> posterwala@gmail.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
     </div>
   </div>
 
@@ -174,5 +177,6 @@
       `;
     }
   </script>
+
 </body>
 </html>
